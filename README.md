@@ -64,7 +64,7 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=chef_chatbot
 DB_USER=postgres
-DB_PASSWORD=postgres
+DB_PASSWORD=yourpassword
 
 # JWT
 JWT_SECRET=your-super-secret-key-change-me
