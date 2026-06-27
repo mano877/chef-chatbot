@@ -446,13 +446,16 @@ Public endpoint — no authentication required.
 
 The API uses **PostgreSQL** with **psycopg2**. Tables are automatically created on startup.
 
-```mermaid
-erDiagram
-    users ||--o{ chat_history : has
-    users ||--o{ saved_recipes : saves
-    users ||--o{ meal_plans : plans
-    users ||--o{ user_ingredients : stores
-    users ||--o{ shopping_lists : owns
+The API uses **PostgreSQL** with **psycopg2**. Tables are automatically created on startup.
+
+| Table | Description |
+|-------|-------------|
+| `users` | Registered users with hashed passwords |
+| `chat_history` | Full conversation history per user |
+| `saved_recipes` | Recipes saved from chat |
+| `meal_plans` | Generated meal plans |
+| `user_ingredients` | Ingredients mentioned by user |
+| `shopping_lists` | Generated shopping lists |
 
     users {
         int id PK
@@ -516,7 +519,7 @@ erDiagram
 | `DB_PORT`           | ✅       | `5432`                                | PostgreSQL port                            |
 | `DB_NAME`           | ✅       | `chef_chatbot`                        | PostgreSQL database name                   |
 | `DB_USER`           | ✅       | `postgres`                            | PostgreSQL username                        |
-| `DB_PASSWORD`       | ✅       | `postgres`                            | PostgreSQL password                        |
+| `DB_PASSWORD`       | ✅       | `yourpassword`                            | PostgreSQL password                        |
 | `JWT_SECRET`        | ✅       | `super-secret-key-change-in-production`| JWT signing secret — **change in production** |
 
 The API also uses these **fixed** settings (not configurable via env):
